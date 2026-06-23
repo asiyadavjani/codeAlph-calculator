@@ -1,7 +1,6 @@
 *,
-*::before
-*::after
-*{
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,10 +10,11 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Scrollbar ko poori window se gayab karne ke liye sahi jagah ye hai */
+     
+
 }
 
-/* From Uiverse.io by andrew-demchenk0 */ 
+ 
 .switch {
   font-size: 17px;
   position: relative;
@@ -126,9 +126,9 @@ html, body {
 /* togler end */
 .switch {
     font-size: 17px;
-    position: absolute; /* Isse ye baqi kisi element se disturb nahi hoga */
-    top: 20px;          /* Top se perfect gap */
-    right: 50px;        /* Right corner par fix */
+    position: absolute; 
+    top: 20px;         
+    right: 50px;      
     width: 64px;
     height: 34px;
     z-index: 10;
@@ -138,18 +138,17 @@ html, body {
 
 .main{
 width: 100%;
-height: 100%;
-max-width: 1200px;
+
   position: relative;
   min-height:auto;
 }
 .black{
    background: url(./darkbackground.jpg);
-   height: 100vh;
-   width: 100vw;
+   min-height: 100vh;
+   width: 100%;
    display: flex;
    flex-direction: column;
-   justify-content: flex-start;
+   justify-content: center;
    align-items: center;
    padding: 20px;
 background-size: cover;
@@ -162,15 +161,14 @@ background-position: center;}
   min-height: 380px;
   height:auto;
   -webkit-backdrop-filter: blur(15px);
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
   margin: auto 0;
-  position: absolute;
-    top: 50%;
-    left: 50%;
-gap: 12px;              /* Heading, Display aur Buttons ke darmiyan barabar ka gap */
-    transform: translate(-50%, -50%); /* Horizontal aur Vertical dono tarah se center karne ka behtareen tareeqa */
 
-    /* Inner settings */
+gap: 12px;              
+    
+
+   
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -180,26 +178,26 @@ gap: 12px;              /* Heading, Display aur Buttons ke darmiyan barabar ka g
     border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
 }
-/* 2. Heading ko chota aur kam padding dena */
-.black .calculator h1 { /* Aapne jo bhi selector heading ke liye banaya ho */
-    font-size: 1.1rem;     /* Size chota kiya */
+
+.black .calculator h1 { 
+    font-size: 1.1rem;    
     font-weight: 500;
-    margin-bottom: 10px;   /* Bottom ka gap kam kiya */
-    padding: 0;            /* Faltu padding khatam ki */
-    opacity: 0.8;          /* Halka sa elegant touch */
+    margin-bottom: 10px;  
+    padding: 0;         
+    opacity: 0.8;         
     text-transform: capitalize;
 }
 
 
-/* Buttons ko 4 columns mein arrange karne ke liye */
+
 .black .buttons-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 barabar ke columns */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 8px;
     background: transparent !important;
 }
 
-/* Base Button Style (Glassmorphism + Smooth Glow) */
+
 .black .btn {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -214,24 +212,24 @@ gap: 12px;              /* Heading, Display aur Buttons ke darmiyan barabar ka g
     outline: none;
 }
 
-/* Hover effect: Jab button par mouse layenge to glow karega */
+
 .black .btn:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px); /* Halka sa upar uthega */
+    transform: translateY(-2px);
 }
 
-/* Click karne par dabne ka effect */
+
 .black .btn:active {
     transform: translateY(0);
 }
 
-/* Operators (+, -, ×, ÷, %) ke liye unique purple tint */
+
 .black .btn-op {
     background: rgba(156, 39, 176, 0.15);
     border-color: rgba(156, 39, 176, 0.3);
-    color: #e040fb; /* Light neon purple text */
+    color: #e040fb; 
 }
 .black .btn-op:hover {
     background: rgba(156, 39, 176, 0.3);
@@ -249,7 +247,7 @@ gap: 12px;              /* Heading, Display aur Buttons ke darmiyan barabar ka g
     box-shadow: 0 0 12px rgba(255, 87, 34, 0.4);
 }
 
-/* Equal (=) Button ke liye vibrant cosmic gradient */
+
 .black .btn-equal {
     background: linear-gradient(135deg, #ec407a, #f57c00); /* Pink se orange gradient */
     border: none;
@@ -262,9 +260,9 @@ gap: 12px;              /* Heading, Display aur Buttons ke darmiyan barabar ka g
     box-shadow: 0 6px 20px rgba(236, 64, 122, 0.6);
 }
 
-/* Reference image mein display screen ka design bhi neon thaa, uske liye: */
+
 .black .display {
-    background: rgba(156, 39, 176, 0.15); /* Tint ko halka kiya taake opacity match ho */
+    background: rgba(156, 39, 176, 0.15); 
     border: 1px solid rgba(156, 39, 176, 0.35);
     border-radius: 12px;
     padding: 12px 16px;
@@ -291,59 +289,58 @@ gap: 12px;              /* Heading, Display aur Buttons ke darmiyan barabar ka g
     background-position: center;
 }
 
-/* Light mode mein main calculator container */
+
 .black.light-mode-active .calculator {
-    /* Soft Frosted White look blend background ke sath */
+   
     background-color: rgba(255, 255, 255, 0.45); 
     color: #1a1a1a;
     box-shadow: 0 10px 35px rgba(31, 38, 135, 0.18);
     border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-/* Heading for Light Mode */
+
 .black.light-mode-active .calculator h1 {
     color: #2c2c2c;
     opacity: 0.9;
 }
 
-/* Light mode mein display screen - Sharp & Readable */
+
 .black.light-mode-active .display {
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(142, 36, 170, 0.3);
-    color: #4a148c; /* Deep Purple readable text */
+    color: #4a148c; 
     box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Regular Buttons (1, 2, 3...) in Light Mode --- */
 .black.light-mode-active .btn {
     background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(0, 0, 0, 0.08);
-    color: #2d3748; /* Dark sleek gray for high readability */
+    color: #2d3748; 
 }
-/* Hover State for Regular Buttons */
+
 .black.light-mode-active .btn:hover {
     background: #ffffff;
     border-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* --- Operator Buttons (+, -, ×, ÷, %) - Beautiful Vibrant Violet/Purple --- */
+
 .black.light-mode-active .btn-op {
     background: rgba(142, 36, 170, 0.12);
     border-color: rgba(142, 36, 170, 0.3);
-    color: #8e24aa; /* Vibrant Purple */
+    color: #8e24aa;
 }
 .black.light-mode-active .btn-op:hover {
     background: rgba(142, 36, 170, 0.25);
     box-shadow: 0 0 12px rgba(142, 36, 170, 0.25);
 }
 
-/* --- Clear & Delete Buttons (C, DEL) - Sharp Energetic Coral/Red --- */
+
 .black.light-mode-active .btn-clear, 
 .black.light-mode-active .btn-del {
     background: rgba(229, 57, 53, 0.1);
     border-color: rgba(229, 57, 53, 0.3);
-    color: #e53935; /* Sharp Red */
+    color: #e53935;
 }
 .black.light-mode-active .btn-clear:hover, 
 .black.light-mode-active .btn-del:hover {
@@ -351,11 +348,10 @@ gap: 12px;              /* Heading, Display aur Buttons ke darmiyan barabar ka g
     box-shadow: 0 0 12px rgba(229, 57, 53, 0.25);
 }
 
-/* --- Equal (=) Button Look & Layout Fix --- */
-/* Yeh rules dark aur light dono modes ke equal button par apply honge space khatam karne ke liye */
+
 .btn-equal {
-    grid-column: span 2; /* Yeh aakhri line ki khali space ko cover kar lega (Takes 2 columns slot) */
-    background: linear-gradient(135deg, #ec407a, #f57c00) !important; /* Gradient color forced fix */
+    grid-column: span 2; 
+    background: linear-gradient(135deg, #ec407a, #f57c00) !important; 
     color: white !important;
 }
 
@@ -363,3 +359,75 @@ gap: 12px;              /* Heading, Display aur Buttons ke darmiyan barabar ka g
     background: linear-gradient(135deg, #f48fb1, #ffb74d) !important;
     box-shadow: 0 6px 18px rgba(236, 64, 122, 0.5) !important;
 }
+
+
+.black.light-mode-active .btn:active {
+    transform: translateY(0) scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #e2e8f0; 
+}
+
+.black.light-mode-active .btn-equal:active {
+    transform: scale(0.95) !important;
+    box-shadow: 0 2px 10px rgba(236, 64, 122, 0.4) !important;
+}
+
+
+.black .btn:active {
+    transform: translateY(0) scale(0.95);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1); 
+    opacity: 0.8;
+}
+
+
+
+/* ========================================================== */
+/* --- RESPONSIVE MEDIA QUERIES (650px se 350px tak) --- */
+/* ========================================================== */
+
+@media screen and (max-width:650px){
+
+    .switch{
+        top:10px;
+        right:10px;
+        transform:scale(.8);
+    }
+
+    .black .calculator{
+        width:100%;
+        max-width:320px;
+        margin-top:40px;
+        padding:18px;
+    }
+}
+
+
+
+@media screen and (max-width:400px){
+
+    .switch{
+        top:8px;
+        right:8px;
+        transform:scale(.7);
+    }
+
+    .black .calculator{
+        max-width:280px;
+        padding:15px;
+        margin-top:35px;
+    }
+
+    .black .display{
+        font-size:1.4rem;
+    }
+
+    .black .btn{
+        padding:10px 0;
+    }
+}
+
+
+/* .sun svg,
+.moon svg{
+    animation:none;
+} */
